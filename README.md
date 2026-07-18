@@ -1,5 +1,4 @@
 # python-flask
-# Project is unfinished.
 
 Python simple flask application that includes almost all common flask components plus some extensions.
 
