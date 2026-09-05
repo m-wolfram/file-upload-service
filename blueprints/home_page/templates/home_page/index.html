@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <p class="text-center fs-5">Welcome to my website</p>
+    <p class="text-center fs-5 text-body-secondary">
+        This is a file upload service
+    </p>
 {% endblock %}
 
 {% block content %}
+    <div class="col-md-4 offset-md-4 text-start">
+        <hr>
+        <p class="fs-6">
+            How to use?
+            <br/><br/>
+            To upload a file go to
+            <a class="link-body" href="{{ url_for('file_uploader.upload_file') }}">
+                file upload page.</a>
+            <br/>
+            To leave a note for everyone who uses this service go to
+            <a class="link-body" href="{{ url_for('public_messages.leave_message') }}">
+                this section.</a>
+            <br/>
+            You should register an account to use the service.
+        </p>
+        <hr>
+    </div>
     {% with username = current_user.username %}
         {% if username %}
             <p class="text-center fs-6 text-success">You are logged in as {{ username }}.</p>
