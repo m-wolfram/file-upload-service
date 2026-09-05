@@ -1,5 +1,5 @@
 import datetime
-from usernames import is_safe_username
+from python_usernames import is_safe_username
 from util.mixins import FormsChecksMixin
 
 
