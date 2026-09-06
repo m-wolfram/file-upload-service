@@ -1,8 +1,15 @@
 .idea/
 .venv/
-.uploaded_files/
+uploaded_files/*
+!uploaded_files/.gitkeep
+certs/*
+!certs/.gitkeep
 
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+.env
+.env.*
+!.env.example

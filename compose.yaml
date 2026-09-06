@@ -1,0 +1,17 @@
+services:
+  file-upload-service:
+    build: .
+    container_name: file-upload-service
+
+    ports:
+      - "${PORT:-5443}:${PORT:-5443}"
+
+    environment:
+      PORT: "${PORT:-5443}"
+
+    volumes:
+      - ./uploaded_files:/app/uploaded_files
+      - ./database:/app/database
+      - ./certs:/app/certs:ro
+
+    restart: unless-stopped

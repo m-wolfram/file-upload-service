@@ -25,6 +25,8 @@ def create_app():
     app.config.from_object("config.ConfigDefault")
     app.config["UPLOAD_FOLDER"] = os.path.join(app.root_path, "uploaded_files")
     app.config["DB_PATH"] = os.path.join(app.root_path, "database", "database.db")
+    app.config["SSL_CERT_FILE"] = os.path.join(app.root_path, "certs", "fullchain.pem")
+    app.config["SSL_KEY_FILE"] = os.path.join(app.root_path, "certs", "privkey.pem")
 
     sqlite3db.init_app(app)
 
@@ -96,6 +98,24 @@ def sync_files_with_db():
         scheduler.app.logger.debug("Uploaded files successfully synced with db.")
 
 
+def get_ssl_context(app):
+    cert_file = app.config["SSL_CERT_FILE"]
+    key_file = app.config["SSL_KEY_FILE"]
+
+    if os.path.isfile(cert_file) and os.path.isfile(key_file):
+        return cert_file, key_file
+
+    return "adhoc"
+
+
 if __name__ == "__main__":
-    create_app().run(host="127.0.0.1", port=5443, ssl_context="adhoc")
-    #create_app().run(host="0.0.0.0", port=5443, debug=False, ssl_context="adhoc")
+    app = create_app()
+
+    port = int(os.getenv("PORT", app.config["DEFAULT_PORT"]))
+    ssl_context = get_ssl_context(app)
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        ssl_context=ssl_context
+    )

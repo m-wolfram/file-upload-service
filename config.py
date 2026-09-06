@@ -1,8 +1,8 @@
-import os
 import datetime
 
 
 class ConfigDefault:
+    DEFAULT_PORT=5443
     DEBUG = False
     SECRET_KEY = b"\xd2l\x1c\xa3\x0c\xc4\x91\x19\xbb\xf3\x15\xfe\xfc\xee\xe6\xed*\xf1\x1c\xb1v\xb5r\xac"
     MAX_CONTENT_LENGTH = 32 * 1024 * 1024
@@ -71,6 +71,7 @@ class ConfigDefault:
 
 
 if __name__ == "__main__":
+    # import os
     # secret_key = os.urandom(24)
     # print(secret_key)
     pass

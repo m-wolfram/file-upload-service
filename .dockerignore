@@ -1,0 +1,14 @@
+.idea/
+.venv/
+uploaded_files/
+database/
+certs/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.git/
+.env
+.env.*
