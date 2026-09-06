@@ -25,8 +25,8 @@ def create_app():
     app.config.from_object("config.ConfigDefault")
     app.config["UPLOAD_FOLDER"] = os.path.join(app.root_path, "uploaded_files")
     app.config["DB_PATH"] = os.path.join(app.root_path, "database", "database.db")
-    app.config["SSL_CERT_FILE"] = os.path.join(app.root_path, "certs", "fullchain.pem")
-    app.config["SSL_KEY_FILE"] = os.path.join(app.root_path, "certs", "privkey.pem")
+    app.config["SSL_CERT_FILE"] = os.path.join(app.root_path, "certs", "fullchain.crt")
+    app.config["SSL_KEY_FILE"] = os.path.join(app.root_path, "certs", "private.key")
 
     sqlite3db.init_app(app)
 
