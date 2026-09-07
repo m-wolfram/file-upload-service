@@ -18,7 +18,7 @@ docker compose up -d
 
 The service will run with HTTPS enabled using a self-signed certificate.
 
-Open the following address in your browser:
+4. Open the following address in your browser:
 
 ```
 https://<host-ip-or-domain>
