@@ -4,6 +4,7 @@ Simple file upload service written in Python.
 
 
 <img width="915" height="336" alt="image" src="https://github.com/user-attachments/assets/ccd9c4c5-3684-41c5-9cb7-ae4fafc4b490" />
+<img width="904" height="851" alt="image" src="https://github.com/user-attachments/assets/26023cab-9a10-4533-8d07-0661c4511fe0" />
 
 ## How to deploy
 
