@@ -2,6 +2,9 @@
 
 Simple file upload service written in Python.
 
+
+<img width="915" height="336" alt="image" src="https://github.com/user-attachments/assets/ccd9c4c5-3684-41c5-9cb7-ae4fafc4b490" />
+
 ## How to deploy
 
 1. Make sure Docker and Docker Compose are installed.
@@ -13,6 +16,14 @@ docker compose up -d
 ```
 
 The service will run with HTTPS enabled using a self-signed certificate.
+
+Open the following address in your browser:
+
+```
+https://<host-ip-or-domain>
+```
+
+Your browser may display a security warning when using the self-signed certificate. This is expected.
 
 ### Using your own certificate
 
